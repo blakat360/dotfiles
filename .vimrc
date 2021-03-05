@@ -1,7 +1,7 @@
 :let mapleader = ","
 
 " options
-:set wrap relativenumber number expandtab shiftwidth=2
+:set wrap relativenumber number expandtab shiftwidth=2 smartcase hlsearch incsearch
 
 " mappings {{{
   :inoremap jk <esc>
@@ -17,6 +17,7 @@
   :nnoremap <silent> <c-l> :wincmd l<CR>
 
   :nnoremap <leader><leader> :execute ":bn"<cr>
+  :nnoremap <leader>. :execute "rightbelow vsplit " . bufname("#")<cr>
 
   :nnoremap H 0
   :nnoremap L $
@@ -37,7 +38,7 @@
 
 " statusline {{{
 :set statusline=[%n]\ 		" buffer number
-:set statusline+=%<%.99f\	" file name 
+:set statusline+=%<%.99f\ 	" file name 
 :set statusline+=%h		" help buffer flag
 :set statusline+=%w		" preview window flag
 :set statusline+=%m		" modified flag
@@ -51,8 +52,12 @@
 " colour scheme {{{
 :highlight Folded ctermbg=16
 :highlight Visual ctermbg=17
+:highlight MatchParen ctermbg=21
 " }}}
 
+" regex helpers
+:nnoremap / /\v
+:nnoremap <leader>nh :execute "nohlsearch"<cr>
 " filetype specific stuff
 " vimscript {{{
 augroup filetype_vim
