@@ -3,6 +3,9 @@
 " options
 :set wrap relativenumber number expandtab shiftwidth=2 smartcase hlsearch incsearch
 
+colorscheme badwolf
+highlight StatusLine ctermbg=180 
+
 " mappings {{{
   :inoremap jk <esc>
 
@@ -10,14 +13,20 @@
   :nnoremap <leader>ev :vsplit ~/.vimrc<CR>
   :nnoremap <leader>sv :source ~/.vimrc<CR>
 
+  " regex helpers
+  :nnoremap / /\v
+  :nnoremap <leader>nh :execute "nohlsearch"<cr>
+
   " navigation {{{
   :nnoremap <silent> <c-k> :wincmd k<CR>
   :nnoremap <silent> <c-j> :wincmd j<CR>
   :nnoremap <silent> <c-h> :wincmd h<CR>
   :nnoremap <silent> <c-l> :wincmd l<CR>
 
-  :nnoremap <leader><leader> :execute ":bn"<cr>
+  :nnoremap <silent> <leader><leader> :execute ":bn"<cr>
   :nnoremap <leader>. :execute "rightbelow vsplit " . bufname("#")<cr>
+
+"  :nnoremap <leader>g :silent execute "grep! -R " . shellescape(expand("<cWORD>")) . " ."<cr>:copen<cr>
 
   :nnoremap H 0
   :nnoremap L $
@@ -49,15 +58,6 @@
 :set statusline+=%P		" % through file
 " }}}
 
-" colour scheme {{{
-:highlight Folded ctermbg=16
-:highlight Visual ctermbg=17
-:highlight MatchParen ctermbg=21
-" }}}
-
-" regex helpers
-:nnoremap / /\v
-:nnoremap <leader>nh :execute "nohlsearch"<cr>
 " filetype specific stuff
 " vimscript {{{
 augroup filetype_vim
