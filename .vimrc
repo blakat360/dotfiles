@@ -1,7 +1,16 @@
 :let mapleader = ","
+:let localleader = "\\"
+
+" plugins {{{
+call plug#begin('~/.vim/plugged')
+
+Plug 'tpope/vim-fugitive'
+
+call plug#end()
+" }}}
 
 " options
-:set wrap relativenumber number expandtab shiftwidth=2 smartcase hlsearch incsearch
+:set wrap relativenumber number expandtab shiftwidth=2 ignorecase smartcase hlsearch incsearch
 
 colorscheme badwolf
 highlight StatusLine ctermbg=180 
@@ -18,16 +27,18 @@ highlight StatusLine ctermbg=180
   :nnoremap <leader>nh :execute "nohlsearch"<cr>
 
   " navigation {{{
+  " move between panes
   :nnoremap <silent> <c-k> :wincmd k<CR>
   :nnoremap <silent> <c-j> :wincmd j<CR>
   :nnoremap <silent> <c-h> :wincmd h<CR>
   :nnoremap <silent> <c-l> :wincmd l<CR>
 
+  " move between buffers in pane
   :nnoremap <silent> <leader><leader> :execute ":bn"<cr>
+  " open last buffer in new pane for editing
   :nnoremap <leader>. :execute "rightbelow vsplit " . bufname("#")<cr>
 
-"  :nnoremap <leader>g :silent execute "grep! -R " . shellescape(expand("<cWORD>")) . " ."<cr>:copen<cr>
-
+  " move to start and end of line
   :nnoremap H 0
   :nnoremap L $
   " }}}
