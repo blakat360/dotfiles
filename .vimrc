@@ -5,6 +5,10 @@
 call plug#begin('~/.vim/plugged')
 
 Plug 'tpope/vim-fugitive'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+
+Plug 'vhdirk/vim-cmake'
+Plug 'bfrg/vim-cpp-modern'
 
 call plug#end()
 " }}}
@@ -23,8 +27,8 @@ highlight StatusLine ctermbg=180
   :nnoremap <leader>sv :source ~/.vimrc<CR>
 
   " regex helpers
-  :nnoremap / /\v
-  :nnoremap <leader>nh :execute "nohlsearch"<cr>
+  nnoremap / /\v
+  nnoremap <silent> <CR> mm:noh<CR><CR>`m
 
   " navigation {{{
   " move between panes
@@ -74,6 +78,12 @@ highlight StatusLine ctermbg=180
 augroup filetype_vim
     autocmd!
     autocmd FileType vim setlocal foldmethod=marker
+augroup END
+" }}}
+" cpp {{{
+augroup filetype_cpp
+  autocmd!
+  autocmd BufRead,BufNewFile *.tpp setlocal filetype=cpp
 augroup END
 " }}}
 
