@@ -6,9 +6,25 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'tpope/vim-fugitive'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'godlygeek/tabular'
+
+Plug 'tpope/vim-surround'
+
+Plug 'skywind3000/asyncrun.vim'
 
 Plug 'vhdirk/vim-cmake'
 Plug 'bfrg/vim-cpp-modern'
+
+Plug 'plasticboy/vim-markdown'
+" vim-markdown options {{{
+let g:vim_markdown_math                      = 1
+let g:vim_markdown_new_list_item_indent      = 2
+let g:vim_markdown_no_extensions_in_markdown = 1
+let g:vim_markdown_autowrite                 = 1
+let g:vim_markdown_edit_url_in               = 'vsplit'
+" }}}
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 
 call plug#end()
 " }}}
