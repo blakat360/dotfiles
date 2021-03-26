@@ -1,5 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =2
+let g:netrw_dirhistcnt =3
+let g:netrw_dirhist_3='/home/sigkill/dotfiles/.vim/ftplugin/cpp'
 let g:netrw_dirhist_2='/home/sigkill/dotfiles'
 let g:netrw_dirhist_1='/home/sigkill/potion/example'
 let g:netrw_dirhist_0='/home/sigkill/potion'
@@ -9,4 +10,3 @@ let g:netrw_dirhist_7='/home/sigkill/mesmerix/GUI_lib/examples'
 let g:netrw_dirhist_6='/home/sigkill/mesmerix/GUI_lib/examples/verification'
 let g:netrw_dirhist_5='/home/sigkill/mesmerix/GUI_lib/examples'
 let g:netrw_dirhist_4='/home/sigkill/mesmerix/GUI_lib'
-let g:netrw_dirhist_3='/home/sigkill/dotfiles/.vim/plugin'

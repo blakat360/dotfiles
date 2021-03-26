@@ -103,4 +103,8 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-mv="mv -i"
+alias mv="mv -i"
+alias open="xdg-open"
+
+# path changes
+export PATH=$PATH:~/shell-scripts
