@@ -105,6 +105,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias mv="mv -i"
 alias open="xdg-open"
+alias ":q"="exit"
 
 # path changes
 export PATH=$PATH:~/shell-scripts

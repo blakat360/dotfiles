@@ -10,9 +10,19 @@ Plug 'junegunn/fzf.vim'
 Plug 'godlygeek/tabular'
 
 Plug 'tpope/vim-surround'
+Plug 'Valloric/ListToggle'
+" listtoggle options {{{
+let g:lt_quickfix_list_toggle_map = '<leader>tq'
+let g:lt_location_list_toggle_map = '<leader>l'
+" }}}
 
 Plug 'skywind3000/asyncrun.vim'
 
+Plug 'justinmk/vim-dirvish'
+" dirvish options {{{
+let g:dirvish_mode = ':sort ,^.*[\/],'
+nnoremap <leader>od :vs<cr>:Dirvish<cr>
+" }}}
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " coc options {{{
 " Set internal encoding of vim, not needed on neovim, since coc.nvim using some
