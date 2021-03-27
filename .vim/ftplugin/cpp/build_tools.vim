@@ -25,7 +25,22 @@ function! GetExecuteableName(name)
   " fzf seems to run async so use callbacks
 endfunction
 
-nnoremap <buffer> <localleader>c :CMake<cr>
+function! ConfigureProject()
+  CMake
+  let cur_dir = getcwd()
+  execute 'cd' fnameescape(b:build_dir . "/..")
+
+  if !filereadable(fnameescape(b:build_dir . "/../.gitignore"))
+    silent execute '!echo "g++">.ccls'
+    silent execute '!echo "build/">.gitignore'
+    silent execute '!echo ".ccls">>.gitignore'
+    silent execute '!echo "compile_commands.json">>.gitignore'
+  endif
+
+  execute 'cd' fnameescape(cur_dir)
+endfunction
+
+nnoremap <buffer> <localleader>c :call ConfigureProject()<cr>
 nnoremap <buffer> <localleader>b :make<cr>
 nnoremap <buffer> <localleader>r :call GetExecuteableName("FZFCallback")<cr>
 nnoremap <buffer> <localleader><cr> :call RunLast()<cr>
