@@ -30,8 +30,11 @@ function! ConfigureProject()
   let cur_dir = getcwd()
   execute 'cd' fnameescape(b:build_dir . "/..")
 
-  if !filereadable(fnameescape(b:build_dir . "/../.gitignore"))
+  if !filereadable(fnameescape(b:build_dir . "/../.ccls"))
     silent execute '!echo "g++">.ccls'
+  endif
+  
+  if !filereadable(fnameescape(b:build_dir . "/../.gitignore"))
     silent execute '!echo "build/">.gitignore'
     silent execute '!echo ".ccls">>.gitignore'
     silent execute '!echo "compile_commands.json">>.gitignore'
