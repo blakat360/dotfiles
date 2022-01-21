@@ -9,6 +9,10 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'godlygeek/tabular'
 Plug 'SirVer/ultisnips'
+" ultisnips options + mappings {{{
+:nnoremap <leader>es :UltiSnipsEdit<CR>
+:nnoremap <leader>ss :UltiSnipsEdit<CR>
+"}}}
 Plug 'honza/vim-snippets'
 
 Plug 'tpope/vim-surround'
