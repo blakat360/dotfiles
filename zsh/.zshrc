@@ -111,3 +111,6 @@ alias ":q"="exit"
 export PATH=$PATH:~/shell-scripts
 export CC=clang
 export CXX=clang++
+
+#source local shit
+source ~/.zshrc_local
