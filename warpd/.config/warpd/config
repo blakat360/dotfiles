@@ -1,4 +1,4 @@
-hint_activation_key: A-M-x
+HINT_ACTIVATION_KEY: a-m-X
 grid_activation_key: A-M-g
 screen_activation_key: A-M-s
 activation_key: A-M-c
@@ -10,7 +10,6 @@ acceleration: 700
 accelerator_acceleration: 2900
 accelerator: a
 buttons: m ' u
-oneshot_buttons: n
 oneshot_timeout: 300
 grid_exit: c
 hint_exit: esc
